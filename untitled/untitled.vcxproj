@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D74274F9-01F5-36DE-A619-669C22ABE271}</ProjectGuid>
+    <RootNamespace>untitled</RootNamespace>
+    <Keyword>Qt4VSv1.0</Keyword>
+    <ProjectName>SketcherWare</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>release\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>release\</IntermediateDirectory>
+    <PrimaryOutput>untitled</PrimaryOutput>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <PlatformToolSet>v120</PlatformToolSet>
+    <OutputDirectory>debug\</OutputDirectory>
+    <ATLMinimizesCRunTimeLibraryUsage>false</ATLMinimizesCRunTimeLibraryUsage>
+    <CharacterSet>NotSet</CharacterSet>
+    <ConfigurationType>Application</ConfigurationType>
+    <IntermediateDirectory>debug\</IntermediateDirectory>
+    <PrimaryOutput>untitled</PrimaryOutput>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings" />
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">untitled</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\sketch-retopo-demo\build\Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\</IntDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">untitled</TargetName>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ReferencePath>C:\Boost\include\boost-1_60;C:\sketch-retopo-demo\include;$(ReferencePath)</ReferencePath>
+    <LibraryPath>C:\Boost\lib\x86;C:\sketch-retopo-demo\lib_vs2013;$(LibraryPath)</LibraryPath>
+    <IncludePath>C:\Boost\include\boost-1_60;C:\sketch-retopo-demo\include;$(IncludePath);$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>.;..\..\..\qt\qt5.7.0\5.7\msvc2013\include;..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets;..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui;..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE;..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore;release;.;..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-Zc:strictStrings -w34100 -w34189 -w44996 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>release\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>None</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\qtmain.lib;shell32.lib;$(QTDIR)\lib\Qt5Widgets.lib;$(QTDIR)\lib\Qt5Gui.lib;$(QTDIR)\lib\Qt5Core.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(QTDIR)\lib;C:\utils\postgresql\pgsql\lib;C:\utils\my_sql\my_sql\lib;$(QTDIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <LinkIncremental>false</LinkIncremental>
+      <OutputFile>$(OutDir)\untitled.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_NO_DEBUG;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>C:\sketch-retopo-demo\src\untitled;C:\Boost\include\boost-1_60;C:\sketch-retopo-demo\src\SketchRetopo;C:\sketch-retopo-demo\.;C:\sketch-retopo-demo\.\include;C:\sketch-retopo-demo\.\src;C:\sketch-retopo-demo\.\src\eigen3;C:\sketch-retopo-demo\.\src\vcglib;C:\sketch-retopo-demo\.\src\AntTweakBar;C:\sketch-retopo-demo\.\src\embree-1.1;C:\sketch-retopo-demo\.\src\embree-1.1\common;C:\sketch-retopo-demo\.\src\embree-1.1\rtcore;C:\sketch-retopo-demo\.\src\lodepng;C:\sketch-retopo-demo\.\src\lp_solve_5.5;C:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp;C:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL;C:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL;C:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd;C:\sketch-retopo-demo\.\src\lp_solve_5.5\shared;C:\sketch-retopo-demo\.\src\tinyxml2;C:\sketch-retopo-demo\.\src\tinyfiledialogs;C:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP;C:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex;C:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore;C:\sketch-retopo-demo\..\vcglib;.;..\..\..\qt\qt5.7.0\5.7\msvc2013\include;..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets;..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui;..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE;..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore;debug;..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013;.\GeneratedFiles;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-w34100 -w34189 -w44996 %(AdditionalOptions)</AdditionalOptions>
+      <AssemblerListingLocation>debug\</AssemblerListingLocation>
+      <BrowseInformation>false</BrowseInformation>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;__STDC_LIMIT_MACROS;EIGEN_DONT_ALIGN_STATICALLY;GLEW_STATIC;TW_NO_LIB_PRAGMA;NO_DIRECT3D;TW_STATIC;LoadInverseLib=FALSE;LoadLanguageLib=FALSE;INVERSE_ACTIVE=INVERSE_LUSOL;RoleIsExternalInvEngine;NOFORTIFY;CHECK_SOLUTION;YY_NEVER_INTERACTIVE;PARSER_LP;LP_MAXLINELEN=0;OM_STATIC_BUILD;_USE_MATH_DEFINES;NOMINMAX;DISABLE_VERBOSITY;NO_SIGACTION;NPARASCIP;NO_STRTOK_R;NO_RAND_R;_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS;SPLIT_POLYCHORD_LOOPS;CMAKE_INTDIR="Debug";%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessToFile>false</PreprocessToFile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <WarningLevel>Level3</WarningLevel>
+      <ProgramDataBaseFileName>$(IntDir)vc$(PlatformToolsetVersion).pdb</ProgramDataBaseFileName>
+      <MinimalRebuild>true</MinimalRebuild>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>$(QTDIR)\lib\qtmaind.lib;shell32.lib;$(QTDIR)\lib\Qt5Widgetsd.lib;$(QTDIR)\lib\Qt5Guid.lib;$(QTDIR)\lib\Qt5Cored.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;..\..\build\Debug\learnquad.lib;sqlite3.lib;..\..\build\Debug\AntTweakBar.lib;..\..\build\Debug\embree-1.1.lib;..\..\build\Debug\lodepng.lib;..\..\build\Debug\patchgen.lib;..\..\build\Debug\lp_solve.lib;..\..\build\Debug\OpenMesh.lib;..\..\build\Debug\tinyxml2.lib;..\..\build\Debug\tinyfiledialogs.lib;glfw3.lib;glew32s.lib;GLU32.lib;OpenGL32.lib;..\..\build\Debug\scip.lib;..\..\build\Debug\SketchRetopo2.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Boost\lib\x86;$(QTDIR)\lib;C:\utils\postgresql\pgsql\lib;C:\utils\my_sql\my_sql\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalOptions>"/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'" %(AdditionalOptions)</AdditionalOptions>
+      <DataExecutionPrevention>true</DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreImportLibrary>true</IgnoreImportLibrary>
+      <OutputFile>$(OutDir)\untitled.exe</OutputFile>
+      <RandomizedBaseAddress>true</RandomizedBaseAddress>
+      <SubSystem>Windows</SubSystem>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <IgnoreSpecificDefaultLibraries>libcmt.lib</IgnoreSpecificDefaultLibraries>
+    </Link>
+    <Midl>
+      <DefaultCharType>Unsigned</DefaultCharType>
+      <EnableErrorChecks>None</EnableErrorChecks>
+      <WarningLevel>0</WarningLevel>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_WINDOWS;UNICODE;WIN32;QT_WIDGETS_LIB;QT_GUI_LIB;QT_CORE_LIB;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_core.cc" />
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_event.cc" />
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_fileio.cc" />
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_init.cc" />
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_intersect.cc" />
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_misc.cc" />
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_render.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateCylinder.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateDeformCurve.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateEdgeLoop.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateEditCorner.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateEditTopology.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateLaser.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateMoveVertex.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateQueryDB.cc" />
+    <ClCompile Include="..\SketchRetopo\state\StateSketch.cc" />
+    <ClCompile Include="Contour2D.cpp" />
+    <ClCompile Include="Contour2DEdge.cpp" />
+    <ClCompile Include="Contour2DVertex.cpp" />
+    <ClCompile Include="Curve2D.cpp" />
+    <ClCompile Include="Curve2DEdge.cpp" />
+    <ClCompile Include="Debug\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_OpenGLDisplayWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qtmenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qtmenubar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qtmenuitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qtsliderframe.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_QTSliderItemCheckbox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_QTSliderItemDigital.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_QTSliderItemOptions.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="OpenGLDisplayWidget.cpp" />
+    <ClCompile Include="Point2D.cpp" />
+    <ClCompile Include="QTSliderFactory.cpp" />
+    <ClCompile Include="QTSliderItemCheckbox.cpp" />
+    <ClCompile Include="QTSliderItemDigital.cpp" />
+    <ClCompile Include="QTSliderItemOptions.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="mainwindow.cpp" />
+    <ClCompile Include="menuitemmodel.cpp" />
+    <ClCompile Include="qtmenu.cpp" />
+    <ClCompile Include="qtmenuassemblehelper.cpp" />
+    <ClCompile Include="qtmenubar.cpp" />
+    <ClCompile Include="qtmenufactory.cpp" />
+    <ClCompile Include="qtmenuitem.cpp" />
+    <ClCompile Include="qtsliderframe.cpp" />
+    <ClCompile Include="Release\moc_mainwindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_OpenGLDisplayWidget.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qtmenu.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qtmenubar.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qtmenuitem.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qtsliderframe.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_QTSliderItemCheckbox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_QTSliderItemDigital.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Release\moc_QTSliderItemOptions.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Stroke2D.cpp" />
+    <ClCompile Include="Stroke3D.cpp" />
+    <ClCompile Include="Stroke3DNormalPlane.cpp" />
+    <ClCompile Include="Stroke3DShellContour.cpp" />
+    <ClCompile Include="Stroke3DShellProjection.cpp" />
+    <ClCompile Include="Stroke3DTagentPlane.cpp" />
+    <ClCompile Include="test.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="OpenGLDisplayWidget.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing OpenGLDisplayWidget.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing OpenGLDisplayWidget.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="..\SketchRetopo\SketchRetopo.hh">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\State.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateCylinder.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateDeformCurve.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateEdgeLoop.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateEditCorner.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateEditTopology.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateLaser.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateMoveVertex.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateQueryDB.hh" />
+    <ClInclude Include="..\SketchRetopo\state\StateSketch.hh" />
+    <ClInclude Include="Contour2D.h" />
+    <ClInclude Include="Contour2DEdge.h" />
+    <ClInclude Include="Contour2DVertex.h" />
+    <ClInclude Include="Curve2D.h" />
+    <ClInclude Include="Curve2DEdge.h" />
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h" />
+    <ClInclude Include="Point2D.h" />
+    <ClInclude Include="QTSliderFactory.h" />
+    <CustomBuild Include="QTSliderItemCheckbox.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing QTSliderItemCheckbox.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing QTSliderItemCheckbox.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="QTSliderItemDigital.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing QTSliderItemDigital.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing QTSliderItemDigital.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="QTSliderItemOptions.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing QTSliderItemOptions.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing QTSliderItemOptions.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="SliderAssembleController.h" />
+    <ClInclude Include="SliderCellModel.h" />
+    <ClInclude Include="SliderFactory.h" />
+    <CustomBuild Include="mainwindow.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing mainwindow.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing mainwindow.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="menu.h" />
+    <ClInclude Include="menuabstractfactory.h" />
+    <ClInclude Include="menuassemblecontroller.h" />
+    <ClInclude Include="menuassemblehelper.h" />
+    <ClInclude Include="menubar.h" />
+    <ClInclude Include="menuitem.h" />
+    <ClInclude Include="menuitemmodel.h" />
+    <CustomBuild Include="qtmenu.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qtmenu.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qtmenu.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qtmenuassemblehelper.h" />
+    <CustomBuild Include="qtmenubar.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qtmenubar.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qtmenubar.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="qtmenufactory.h" />
+    <CustomBuild Include="qtmenuitem.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qtmenuitem.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qtmenuitem.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="qtsliderframe.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_NO_DEBUG -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -DNDEBUG  "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\release" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Moc%27ing qtsliderframe.h...</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\moc.exe"  "%(FullPath)" -o "$(ConfigurationName)\moc_%(Filename).cpp"  -D_WINDOWS -DUNICODE -DWIN32 -DQT_WIDGETS_LIB -DQT_GUI_LIB -DQT_CORE_LIB -D_DEBUG -D__STDC_LIMIT_MACROS -DEIGEN_DONT_ALIGN_STATICALLY -DGLEW_STATIC -DTW_NO_LIB_PRAGMA -DNO_DIRECT3D -DTW_STATIC -DLoadInverseLib=FALSE -DLoadLanguageLib=FALSE -DINVERSE_ACTIVE=INVERSE_LUSOL -DRoleIsExternalInvEngine -DNOFORTIFY -DCHECK_SOLUTION -DYY_NEVER_INTERACTIVE -DPARSER_LP -DLP_MAXLINELEN=0 -DOM_STATIC_BUILD -D_USE_MATH_DEFINES -DNOMINMAX -DDISABLE_VERBOSITY -DNO_SIGACTION -DNPARASCIP -DNO_STRTOK_R -DNO_RAND_R -D_SILENCE_STDEXT_HASH_DEPRECATION_WARNINGS -DSPLIT_POLYCHORD_LOOPS -DCMAKE_INTDIR=\"Debug\"  "-IC:\sketch-retopo-demo\src\untitled" "-IC:\Boost\include\boost-1_60" "-IC:\sketch-retopo-demo\src\SketchRetopo" "-IC:\sketch-retopo-demo\." "-IC:\sketch-retopo-demo\.\include" "-IC:\sketch-retopo-demo\.\src" "-IC:\sketch-retopo-demo\.\src\eigen3" "-IC:\sketch-retopo-demo\.\src\vcglib" "-IC:\sketch-retopo-demo\.\src\AntTweakBar" "-IC:\sketch-retopo-demo\.\src\embree-1.1" "-IC:\sketch-retopo-demo\.\src\embree-1.1\common" "-IC:\sketch-retopo-demo\.\src\embree-1.1\rtcore" "-IC:\sketch-retopo-demo\.\src\lodepng" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\bfp\bfp_LUSOL\LUSOL" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\colamd" "-IC:\sketch-retopo-demo\.\src\lp_solve_5.5\shared" "-IC:\sketch-retopo-demo\.\src\tinyxml2" "-IC:\sketch-retopo-demo\.\src\tinyfiledialogs" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore\SCIP\soplex" "-IC:\sketch-retopo-demo\.\src\LearningQuadrangulationsCore" "-IC:\sketch-retopo-demo\..\vcglib" "-I." "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtWidgets" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtGui" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtANGLE" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\include\QtCore" "-I.\debug" "-I.\..\..\..\qt\qt5.7.0\5.7\msvc2013\mkspecs\win32-msvc2013" "-I.\GeneratedFiles"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Moc%27ing qtsliderframe.h...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(ConfigurationName)\moc_%(Filename).cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>
+    </CustomBuild>
+    <ClInclude Include="Stroke2D.h" />
+    <ClInclude Include="Stroke3D.h" />
+    <ClInclude Include="Stroke3DNormalPlane.h" />
+    <ClInclude Include="Stroke3DShellContour.h" />
+    <ClInclude Include="Stroke3DShellProjection.h" />
+    <ClInclude Include="Stroke3DTagentPlane.h" />
+    <ClInclude Include="test.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.ui">
+      <FileType>Document</FileType>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\uic.exe;%(AdditionalInputs)</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\uic.exe" -o ".\GeneratedFiles\ui_%(Filename).h" "%(FullPath)"</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Uic%27ing %(Identity)...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\ui_%(Filename).h;%(Outputs)</Outputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties UicDir=".\GeneratedFiles" RccDir=".\GeneratedFiles" Qt5Version_x0020_Win32="msvc2013" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

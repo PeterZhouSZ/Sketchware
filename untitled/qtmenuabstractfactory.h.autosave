@@ -1,0 +1,13 @@
+#ifndef QTMENUABSTRACTFACTORY_H
+#define QTMENUABSTRACTFACTORY_H
+
+namespace sketcherUI {
+class QTMenuAbstractFactory : public MenuAbstractFactory
+{
+public:
+    QTMenuAbstractFactory();
+};
+}
+
+
+#endif // QTMENUABSTRACTFACTORY_H

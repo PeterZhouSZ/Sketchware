@@ -1,0 +1,62 @@
+#pragma once
+
+#include <QPoint>
+#include <QtOpenGL/qgl.h>
+#include <QtWidgets>
+
+#include <cmath>
+#include <QMessageBox>
+#include <QWheelEvent>
+
+#include <QOpenGLFunctions>
+#include <QOpenGLShader>
+#include <QOpenGLShaderProgram>
+#include <QOpenGLTexture>
+
+#include <cstdlib>
+#include <kt84/graphics/graphics_util.hh>
+//#include <kt84/zenity_util.hh>
+#include <kt84/tinyfd_util.hh>
+#include "SketchRetopo.hh"
+#include <boost/algorithm/string.hpp>
+
+using namespace std;
+using namespace kt84;
+using namespace kt84::graphics_util;
+
+class OpenGLDisplayWidget : public QOpenGLWidget, protected QOpenGLFunctions
+{
+	Q_OBJECT
+
+public:
+
+	OpenGLDisplayWidget(GSData* p, QWidget* pParent = 0);
+	~OpenGLDisplayWidget();
+
+
+
+public:
+
+
+protected:
+	
+	//初始化
+	void initializeGL();
+
+	//绘制函数
+	void paintGL();
+
+
+	//更改Widget大小时会用到
+	void resizeGL(int width, int height);
+
+	//鼠标事件
+	void mousePressEvent(QMouseEvent* pEvent);
+	void mouseReleaseEvent(QMouseEvent* pEvent);
+	void mouseMoveEvent(QMouseEvent* pEvent);
+	void wheelEvent(QWheelEvent* pEvent);
+
+private:
+	SketchRetopo::SketchRetopo &core;
+
+};

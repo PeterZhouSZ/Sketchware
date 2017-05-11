@@ -1,0 +1,391 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Form Files">
+      <UniqueIdentifier>{99349809-55BA-4b9d-BF79-8FDBB0286EB3}</UniqueIdentifier>
+      <Extensions>ui</Extensions>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files">
+      <UniqueIdentifier>{71ED8ED8-ACB9-4CE9-BBE1-E00B30144E11}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;moc;h;def;odl;idl;res;</Extensions>
+    </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{6991e102-2772-48fb-bd6f-6f1a1d83584f}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{7022bc5c-ed31-4ae8-8fc0-a9b1fa44e23b}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Sketcher">
+      <UniqueIdentifier>{6f80c456-cc38-4eb7-9bc4-6c8c338c3a9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Curve">
+      <UniqueIdentifier>{0ba1fd26-f2dc-4d75-a17a-726124afa4a4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{803746ce-c608-4188-9194-d8b1ad145200}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="UI\Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Curve\2D">
+      <UniqueIdentifier>{932663d0-d557-47f0-8f47-4b6c54874c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Curve\3D">
+      <UniqueIdentifier>{86c01c63-8ceb-4336-bc74-e152d89841cf}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="OpenGLDisplayWidget.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QTSliderFactory.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QTSliderItemCheckbox.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QTSliderItemDigital.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="QTSliderItemOptions.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mainwindow.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="menuitemmodel.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qtmenu.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qtmenuassemblehelper.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qtmenubar.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qtmenufactory.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qtmenuitem.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="qtsliderframe.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test.cpp">
+      <Filter>UI\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_OpenGLDisplayWidget.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_OpenGLDisplayWidget.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_QTSliderItemCheckbox.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_QTSliderItemCheckbox.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_QTSliderItemDigital.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_QTSliderItemDigital.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_QTSliderItemOptions.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_QTSliderItemOptions.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_mainwindow.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_mainwindow.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qtmenu.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qtmenu.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qtmenubar.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qtmenubar.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qtmenuitem.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qtmenuitem.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="Debug\moc_qtsliderframe.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Release\moc_qtsliderframe.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_core.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_event.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_fileio.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_init.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_intersect.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_misc.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\SketchRetopo_render.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateCylinder.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateDeformCurve.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateEdgeLoop.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateEditCorner.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateEditTopology.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateLaser.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateMoveVertex.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateQueryDB.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SketchRetopo\state\StateSketch.cc">
+      <Filter>Sketcher</Filter>
+    </ClCompile>
+    <ClCompile Include="Contour2D.cpp">
+      <Filter>Curve\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Contour2DEdge.cpp">
+      <Filter>Curve\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Contour2DVertex.cpp">
+      <Filter>Curve\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Curve2D.cpp">
+      <Filter>Curve\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Curve2DEdge.cpp">
+      <Filter>Curve\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Point2D.cpp">
+      <Filter>Curve\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Stroke2D.cpp">
+      <Filter>Curve\2D</Filter>
+    </ClCompile>
+    <ClCompile Include="Stroke3D.cpp">
+      <Filter>Curve\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Stroke3DNormalPlane.cpp">
+      <Filter>Curve\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Stroke3DShellContour.cpp">
+      <Filter>Curve\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Stroke3DShellProjection.cpp">
+      <Filter>Curve\3D</Filter>
+    </ClCompile>
+    <ClCompile Include="Stroke3DTagentPlane.cpp">
+      <Filter>Curve\3D</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="OpenGLDisplayWidget.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="QTSliderFactory.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="QTSliderItemCheckbox.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QTSliderItemDigital.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="QTSliderItemOptions.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="SliderAssembleController.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SliderCellModel.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SliderFactory.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="mainwindow.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="menu.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menuabstractfactory.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menuassemblecontroller.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menuassemblehelper.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menubar.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menuitem.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="menuitemmodel.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="qtmenu.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="qtmenuassemblehelper.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="qtmenubar.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="qtmenufactory.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+    <CustomBuild Include="qtmenuitem.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qtsliderframe.h">
+      <Filter>UI\Header Files</Filter>
+    </CustomBuild>
+    <ClInclude Include="test.h">
+      <Filter>UI\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="mainwindow.ui">
+      <Filter>Form Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\SketchRetopo.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\State.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateCylinder.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateDeformCurve.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateEdgeLoop.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateEditCorner.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateEditTopology.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateLaser.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateMoveVertex.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateQueryDB.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SketchRetopo\state\StateSketch.hh">
+      <Filter>Sketcher</Filter>
+    </ClInclude>
+    <ClInclude Include="Contour2D.h">
+      <Filter>Curve\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Contour2DEdge.h">
+      <Filter>Curve\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Contour2DVertex.h">
+      <Filter>Curve\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Curve2D.h">
+      <Filter>Curve\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Curve2DEdge.h">
+      <Filter>Curve\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Point2D.h">
+      <Filter>Curve\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Stroke2D.h">
+      <Filter>Curve\2D</Filter>
+    </ClInclude>
+    <ClInclude Include="Stroke3D.h">
+      <Filter>Curve\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Stroke3DNormalPlane.h">
+      <Filter>Curve\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Stroke3DShellContour.h">
+      <Filter>Curve\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Stroke3DShellProjection.h">
+      <Filter>Curve\3D</Filter>
+    </ClInclude>
+    <ClInclude Include="Stroke3DTagentPlane.h">
+      <Filter>Curve\3D</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

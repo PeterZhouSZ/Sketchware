@@ -1,0 +1,7 @@
+#include "qtmenuabstractfactory.h"
+
+
+QTMenuAbstractFactory::QTMenuAbstractFactory()
+{
+
+}
