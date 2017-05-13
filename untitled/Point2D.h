@@ -11,7 +11,7 @@ public:
 
 	Point2D() { _point = Point(0); }
 	Point2D(Point point, int edge_index) : _point(point), _edge_idx(edge_index) {}
-	Point2D(Point2D firstPoint, Point2D secondPoint, double weight, int edge_index) : Point2D(firstPoint.point() * weight + secondPoint.point() * (1 - weight), edge_index) {}
+	Point2D(const Point2D firstPoint, const Point2D secondPoint, double weight, int edge_index) : Point2D(firstPoint.point() * weight + secondPoint.point() * (1 - weight), edge_index) {}
 	virtual ~Point2D();
 	
 	//Getter and setter
