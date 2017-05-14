@@ -7,11 +7,13 @@ namespace SketcherCore {
 class Point2D
 {
 public:
-	typedef Eigen::Vector3d Point;
+	typedef Eigen::Vector2d Point;
 
 	Point2D() { _point = Point(0); }
+	Point2D(int  x, int y, int edge_index = -1) : Point2D(Eigen::Vector2d(x, y), edge_index) {}
 	Point2D(Point point, int edge_index) : _point(point), _edge_idx(edge_index) {}
-	Point2D(const Point2D firstPoint, const Point2D secondPoint, double weight, int edge_index) : Point2D(firstPoint.point() * weight + secondPoint.point() * (1 - weight), edge_index) {}
+	Point2D(Eigen::Vector3d point, int edge_index) : Point2D(Eigen::Vector2d(point.x(), point.y()), edge_index) {}
+	Point2D(const Point2D firstPoint, const Point2D secondPoint, double weight, int edge_index) : Point2D((firstPoint.point() * weight + secondPoint.point() * (1 - weight)).eval(), edge_index) {}
 	virtual ~Point2D();
 	
 	//Getter and setter

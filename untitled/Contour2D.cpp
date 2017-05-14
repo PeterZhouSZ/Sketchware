@@ -139,7 +139,7 @@ void Contour2D::addEdge(BaseMesh::EdgeHandle edge_handle, map<int, int>& pointsM
 			double w1 = 1 - w0;
 			auto pointPos = _points[v_a].point() * w0 + _points[v_b].point() * w1;
 			result.push_back( _points.size());
-			_points.push_back(Contour2DVertex(pointPos, w0, edge_start_index));
+			_points.push_back(Contour2DVertex(pointPos.eval(), w0, edge_start_index));
 		}
 	}
 	result.push_back(v_b);
@@ -179,7 +179,7 @@ std::vector<Eigen::Vector3d> Contour2D::getCorrespondingContour(const Stroke2D<P
 	vector<Contour2DVertex> result;
 	result.push_back(_points[first_ver]);
 
-	auto distance_between = [&](int idx, Vector3d point) {
+	auto distance_between = [&](int idx, Point2D point) {
 		return vertex(idx).distance(point);
 	};
 	
@@ -188,7 +188,7 @@ std::vector<Eigen::Vector3d> Contour2D::getCorrespondingContour(const Stroke2D<P
 		int next = -1;
 		for (auto next_ver : _topoGraph[now]) {
 			if (visited[next_ver])continue;
-			double distance = distance_between(next_ver, stroke[i].point());
+			double distance = distance_between(next_ver, stroke[i]);
 			if (min == -1 || min > distance) { min = distance; next = next_ver; }
 		}
 		result.push_back(_points[next]);
@@ -234,7 +234,7 @@ void Contour2D::resample_by_length(double segment_length) {
 		};
 
 		auto get_position = [&](const Contour2DEdge & edge, double w) {
-			return point(edge.firstPoint()).point() * w + point(edge.secondPoint()).point() * (1 - w);
+			return (point(edge.firstPoint()).point() * w + point(edge.secondPoint()).point() * (1 - w)).eval();
 		};
 		double w = s_l / edge.length();
 		double len = s_l;
