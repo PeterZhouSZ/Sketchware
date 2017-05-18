@@ -27,7 +27,7 @@ Contour2D::~Contour2D()
 }
 
 void Contour2D::generateFaceConditions() {
-	memset(_faceCondition, 0, sizeof(_faceCondition));
+	memset(_faceCondition, 0, sizeof(FaceCondition) * core.basemesh.n_faces());
 
 	auto make_Ray = [](const Vector3d& org, const Vector3d& dir) {
 		auto org_f = org.cast<float>();
@@ -126,8 +126,7 @@ void Contour2D::addEdge(BaseMesh::EdgeHandle edge_handle, map<int, int>& pointsM
 	int v_b = index_of_point(pos_b, 1, -1);
 	double length =_points[v_a].distance(_points[v_b]);
 	int size = std::floor(length / _segmentLength);
-	_points.pop_back();
-	index_of_point(pos_b, 1, edge_start_index + size + 1);
+	_points.back().setEdgeIndex(edge_start_index + size + 1);
 
 	vector<int> result;
 	result.push_back(v_a);
@@ -139,7 +138,7 @@ void Contour2D::addEdge(BaseMesh::EdgeHandle edge_handle, map<int, int>& pointsM
 			double w1 = 1 - w0;
 			auto pointPos = _points[v_a].point() * w0 + _points[v_b].point() * w1;
 			result.push_back( _points.size());
-			_points.push_back(Contour2DVertex(pointPos.eval(), w0, edge_start_index));
+			_points.push_back(Contour2DVertex(pointPos.eval(), w0, _points.size(),edge_start_index));
 		}
 	}
 	result.push_back(v_b);
@@ -186,11 +185,13 @@ std::vector<Eigen::Vector3d> Contour2D::getCorrespondingContour(const Stroke2D<P
 	for(int i = 1; i < stroke.size(); i++) {
 		double min = -1;
 		int next = -1;
-		for (auto next_ver : _topoGraph[now]) {
+		for (auto next_edge : _topoGraph[now]) {
+			int next_ver = edge(next_edge).nextPoint(now);
 			if (visited[next_ver])continue;
 			double distance = distance_between(next_ver, stroke[i]);
 			if (min == -1 || min > distance) { min = distance; next = next_ver; }
 		}
+		if (next == -1) return vector<Vector3d>();
 		result.push_back(_points[next]);
 		visited[next] = true;
 		now = next;
@@ -241,12 +242,12 @@ void Contour2D::resample_by_length(double segment_length) {
 		
 		edges.push_back(Contour2DEdge(std::make_pair<int, int>(_points.size() - 2, _points.size() - 1), len, edge.idx3D()));
 
-		_points.push_back(Contour2DVertex(get_position(edge, w), get_weight(edge, w), edges.size()));
+		_points.push_back(Contour2DVertex(get_position(edge, w), get_weight(edge, w), _points.size(), edges.size()));
 		edges.push_back(Contour2DEdge(std::make_pair<int, int>(edge.firstPoint(), _points.size() - 1), s_l, edge.idx3D()));
 		for (int i = 1; i < size - 1; i++) {
 			len += s_l;
 			w = len / edge.length();
-			_points.push_back(Contour2DVertex(get_position(edge, w), get_weight(edge, w), edges.size()));
+			_points.push_back(Contour2DVertex(get_position(edge, w), get_weight(edge, w), _points.size(), edges.size()));
 			edges.push_back(Contour2DEdge(std::make_pair<int, int>(_points.size() - 2, _points.size() - 1), s_l, edge.idx3D()));
 		}
 		edges.push_back(Contour2DEdge(std::make_pair<int, int>(_points.size() - 1, edge.secondPoint()), edge.length() - len, edge.idx3D()));

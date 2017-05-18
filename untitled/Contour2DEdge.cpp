@@ -34,7 +34,7 @@ Vector3d Contour2DEdge::secondPoint_3DPosition()const {
 }
 
 OpenMesh::HalfedgeHandle Contour2DEdge::halfEdge()const {
-	auto edge_handle = core.basemesh.edge_handle(_idx);
+	auto edge_handle = core.basemesh.edge_handle(_idx3D);
 	return core.basemesh.halfedge_handle(edge_handle, 0);
 }
 

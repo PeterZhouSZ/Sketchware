@@ -9,18 +9,20 @@ class Point2D
 public:
 	typedef Eigen::Vector2d Point;
 
-	Point2D() { _point = Point(0); }
-	Point2D(int  x, int y, int edge_index = -1) : Point2D(Eigen::Vector2d(x, y), edge_index) {}
-	Point2D(Point point, int edge_index) : _point(point), _edge_idx(edge_index) {}
-	Point2D(Eigen::Vector3d point, int edge_index) : Point2D(Eigen::Vector2d(point.x(), point.y()), edge_index) {}
-	Point2D(const Point2D firstPoint, const Point2D secondPoint, double weight, int edge_index) : Point2D((firstPoint.point() * weight + secondPoint.point() * (1 - weight)).eval(), edge_index) {}
+	Point2D() { _point = Point(NAN, NAN);  _idx = -1; }
+	Point2D(double  x, double y, int idx) : Point2D(Eigen::Vector2d(x, y), idx) {}
+	Point2D(Point point, int idx) : _point(point), _idx(idx) {}
+	Point2D(Eigen::Vector3d point, int idx) : Point2D(Eigen::Vector2d(point.x(), point.y()), idx) {}
+	Point2D(const Point2D firstPoint, const Point2D secondPoint, double weight, int idx) : Point2D((firstPoint.point() * weight + secondPoint.point() * (1 - weight)).eval(), idx) {}
 	virtual ~Point2D();
 	
 	//Getter and setter
 	Point point()const { return _point; }
+	Point position()const { return point(); }
 	double x()const {return _point.x(); }
 	double y()const {return _point.y();}
-	int edge_index()const { return _edge_idx; }
+	int idx()const { return _idx; }
+	
 
 	//Distance
 	double distance(const Eigen::Vector2d & p)const{ return std::sqrt(std::pow<double>(2, p.x() - _point.x()) + std::pow<double>(2, p.y() - _point.y())); }
@@ -36,7 +38,8 @@ public:
 
 protected:
 	Point _point;
-	int _edge_idx;
+	int _idx;
+	
 };
 
 }

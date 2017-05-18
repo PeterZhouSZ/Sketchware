@@ -38,6 +38,7 @@ public:
 	Contour2DVertex vertex(int vertex_idx)const { return point(vertex_idx); }
 	Contour2DEdge edge(int edge_idx)const { return line(edge_idx); }
 	std::vector<Eigen::Vector3d> Contour2D::getCorrespondingContour(const Stroke2D<Point2D> & stroke);
+	void set_segment_length(double segment_length) { _segmentLength = segment_length; }
 	
 	virtual void resample_by_length(double segment_length);
 

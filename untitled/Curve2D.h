@@ -61,6 +61,8 @@ public:
 	ConstReverseIterator<EdgeType> edge_rend() const { return _lines.rend(); }
 
 	Curve2D() {}
+	Curve2D(PointType points) : _points(points), _topoGraph(std::vector <std::vector<int>>(points.size(), std::vector<int>())) {}
+	Curve2D(PointType points, EdgeType edges) : Curve2D(points), _lines(edges) {}
 	virtual ~Curve2D() {
 		_lines.clear();
 		_points.clear();
@@ -70,6 +72,8 @@ public:
 	Edge line(int edge_idx)const { if (edge_idx >= 0 && edge_idx < _lines.size()) return _lines[edge_idx]; return  Edge(); }
 
 	virtual void resample_by_length(double segment_length) = 0;
+
+	
 
 protected:
 	virtual void generateTopoGraph();
@@ -84,9 +88,12 @@ template <class Point, class Edge>
 void Curve2D<Point, Edge>::generateTopoGraph() {
 	_topoGraph.clear();
 	_topoGraph = vector<vector<int>>(_points.size(), vector<int>());
+
+	int count = 0;
 	for (auto edge : _lines) {
-		_topoGraph[edge.firstPoint()].push_back(edge.secondPoint());
-		_topoGraph[edge.secondPoint()].push_back(edge.firstPoint());
+		_topoGraph[edge.firstPoint()].push_back(count);
+		_topoGraph[edge.secondPoint()].push_back(count);
+		count += 1;
 	}
 }
 
