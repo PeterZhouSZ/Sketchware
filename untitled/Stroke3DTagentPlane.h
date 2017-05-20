@@ -7,7 +7,7 @@ class Stroke3DTagentPlane :
 	public Stroke3D
 {
 public:
-	Stroke3DTagentPlane(const Stroke2D<Point2D> & stroke) : Stroke3D(stroke) {}
+	Stroke3DTagentPlane(const Stroke2D<Point2D> & stroke) : Stroke3D(stroke) { set_polyline_pn(stroke); }
 	virtual ~Stroke3DTagentPlane();
 
 	static Point shallowest_point(const Stroke2D<Point2D> & stroke);

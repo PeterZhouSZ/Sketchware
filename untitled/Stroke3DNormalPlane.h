@@ -7,7 +7,7 @@ class Stroke3DNormalPlane :
 	public Stroke3D
 {
 public:
-	Stroke3DNormalPlane(const Stroke2D<Point2D> & stroke) : Stroke3D(stroke) {}
+	Stroke3DNormalPlane(const Stroke2D<Point2D> & stroke) : Stroke3D(stroke) { set_polyline_pn(stroke); }
 	virtual ~Stroke3DNormalPlane();
 
 protected:

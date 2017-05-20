@@ -7,7 +7,7 @@ using namespace kt84;
 using namespace Eigen;
 using namespace kt84::graphics_util;
 
-#define DEFAULT_HEIGHT 0.00001
+
 
 namespace {
 	auto & core = SketchRetopo::get_instance();
@@ -76,14 +76,14 @@ boost::optional<Stroke3D::PointNormal> Stroke3DShellProjection::get_point_when_p
 	
 	auto interest_position = core.intersect_convert(core.intersect(merge(eye_forward_position, position - eye_forward_position)));
 
-	if (!interest_position.is_initialized()) {
+	if (interest_position.is_initialized()) {
 		auto pn = *interest_position;
 		auto direction = pn.tail<3>();
 		direction.normalize();
 		direction *= height;
 		return boost::optional<PointNormal>(merge((*interest_position).head<3>() + direction, -direction)); 
 	}
-	return  boost::optional<PointNormal>();
+	return  boost::none;
 }
 
 Stroke3D::PointNormal Stroke3DShellProjection::get_point_when_fail_to_project(const Point & a, const Point &b, const Point2D& stroke_point)const {
@@ -92,7 +92,11 @@ Stroke3D::PointNormal Stroke3DShellProjection::get_point_when_fail_to_project(co
 	return merge(intersect_point(merge(core.camera->get_eye(), direction), min_skew), min_skew.tail<3>().eval());
 }
 
-Polyline_PointNormal Stroke3DShellProjection::get_points(const Stroke2D<Point2D> & stroke) {
+//Polyline_PointNormal Stroke3DShellProjection::get_points(const Stroke2D<Point2D> & stroke) {
+//	
+//}
+
+Polyline_PointNormal Stroke3DShellProjection::polyline_pn(const Stroke2D<Point2D> & stroke) {
 	if (stroke.size() < 2) return Polyline_PointNormal();
 	auto first_end_point = get_end_point_of_the_stroke(stroke.front());
 	auto last_end_point = get_end_point_of_the_stroke(stroke.back());
@@ -150,21 +154,15 @@ Polyline_PointNormal Stroke3DShellProjection::get_points(const Stroke2D<Point2D>
 	return Polyline_PointNormal(result, false);
 }
 
-Polyline_PointNormal Stroke3DShellProjection::polyline_pn(const Stroke2D<Point2D> & stroke) {
-	
-	return Polyline_PointNormal();
-}
-
 boost::optional<PointNormal> Stroke3DShellProjection::get_end_point_of_the_stroke(const Point2D & stroke_endpoint) {
 	auto end_point = Stroke3D::get_end_point_of_the_stroke(stroke_endpoint);
 	if (end_point.is_initialized()) {
 		return end_point;
 	}
 
-	Line line = merge(core.camera->get_eye(), unproject(Vector3d(stroke_endpoint.x(), stroke_endpoint.y(), 1.0)) - core.camera->get_eye());
-	auto result_face_point = Stroke3DShellContour::nearest_point_line_to_model(line);
-	auto result = nearest_point_line_to_point(line, result_face_point);
-	return merge(result, result_face_point - result);
+	auto stroke3D = unproject(Vector3d(stroke_endpoint.x(), stroke_endpoint.y(), 1.0));
+	Line line = merge(core.camera->get_eye(), (stroke3D - core.camera->get_eye()).eval());
+	return Stroke3DShellContour::nearest_point_line_to_model(line);
 }
 
 }
