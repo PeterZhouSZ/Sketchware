@@ -114,7 +114,7 @@ Polyline_PointNormal Stroke3DShellProjection::polyline_pn(const Stroke2D<Point2D
 	{
 		//Store the projection failure points
 		while (stroke_itr != stroke.end() - 1) {
-			auto point = get_point_when_projectable(*stroke_itr, current_height_index);
+			auto point = get_point_when_projectable(*stroke_itr, height(current_height_index));
 			current_height_index += 1; stroke_itr++;
 
 			if (point.is_initialized()) {
