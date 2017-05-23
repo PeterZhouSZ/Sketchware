@@ -58,8 +58,8 @@ Polyline_PointNormal Stroke3DShellContour::polyline_pn(const Stroke2D<Point2D> &
 	}
 	else {
 		vector<PointNormal> result_points;
-		auto s_1 = nearest_point_line_to_model(stroke.front());
-		auto s_n = nearest_point_line_to_model(stroke.back());
+		auto s_1 = nearest_point_line_to_model(stroke.front()).head<3>().eval();
+		auto s_n = nearest_point_line_to_model(stroke.back()).head<3>().eval();
 		auto d = (s_n - s_1).eval();
 		auto s1_to_model_face = -(s_1 - core.camera->get_eye()).cross(d);
 		auto direction = d.cross(s1_to_model_face);
@@ -92,11 +92,22 @@ vector<PointNormal> Stroke3DShellContour::featureCurveContour(const Stroke2D<Poi
 
 
 
-Stroke3D::Point Stroke3DShellContour::nearest_point_line_to_model(const Point2D & stroke_point) {
+Stroke3D::PointNormal Stroke3DShellContour::nearest_point_line_to_model(const Point2D & stroke_point) {
 	return nearest_point_line_to_model(merge(core.camera->get_eye(), unproject(Vector3d(stroke_point.x(), stroke_point.y(), 1.0)) - core.camera->get_eye()));
 }
 
-Stroke3D::Point Stroke3DShellContour::nearest_point_line_to_model(const Line & line) {
+Stroke3D::PointNormal Stroke3DShellContour::nearest_point_line_to_model(const Line & line) {
+
+	//The line interset with the model
+	auto pn = core.intersect_convert(core.intersect(line));
+	if (pn.is_initialized()) {
+		auto direction = pn->tail<3>().eval();
+		direction.normalize();
+		direction *= DEFAULT_HEIGHT;
+		return *pn + merge(direction, Vector3d::Zero().eval());
+	}
+
+	//The line uninterset with the model
 	Point nearest_point;
 	double min_distance = INFINITY;
 	for (BaseMesh::FaceIter f_it = core.basemesh.faces_begin(); f_it != core.basemesh.faces_end(); ++f_it) {
@@ -109,11 +120,13 @@ Stroke3D::Point Stroke3DShellContour::nearest_point_line_to_model(const Line & l
 		double distance = point_normal.tail<3>().norm();
 		if (distance < min_distance) {
 			nearest_point = point_normal.head<3>();
-			distance = min_distance;
+			min_distance = distance;
 		}
 	}
 
-	return nearest_point;
+	auto result = nearest_point_line_to_point(line, nearest_point);
+
+	return merge(result, nearest_point - result);
 }
 
 }
