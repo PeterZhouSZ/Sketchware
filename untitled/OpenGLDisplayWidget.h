@@ -7,14 +7,15 @@
 #include <qopenglwidget.h>
 #include <QOpenGLFunctions>
 #include <QInputEvent>
-
-
-#include "SketchRetopo.hh"
-
+#include "state\Button.hh"
 
 
 
-class OpenGLDisplayWidget : public QOpenGLWidget, protected QOpenGLFunctions
+
+
+
+
+class OpenGLDisplayWidget : public QOpenGLWidget, public QOpenGLFunctions
 {
 	Q_OBJECT
 
@@ -55,13 +56,12 @@ protected:
 
 
 private:
-	OpenGLDisplayWidget(QWidget* pParent = Q_NULLPTR) : QOpenGLWidget(pParent), _core(SketchRetopo::get_instance()) {
+	OpenGLDisplayWidget(QWidget* pParent = Q_NULLPTR) : QOpenGLWidget(pParent) {
 		setFocusPolicy(Qt::StrongFocus);
 		setMouseTracking(true);
 	}
 	~OpenGLDisplayWidget();
 
 	static OpenGLDisplayWidget * glDisplayInstance;
-	SketchRetopo &_core;
 
 };

@@ -10,6 +10,7 @@
 #include <boost/algorithm/string.hpp>
 #include "SketchRetopo\SketchRetopo.hh"
 #include <qdebug.h>
+#include "SketchRetopo.hh"
 
 using namespace std;
 using namespace kt84;
@@ -22,6 +23,10 @@ bool isDirectionQtKey(int key);
 bool isLegalQtKey(int key);
 
 OpenGLDisplayWidget * OpenGLDisplayWidget::glDisplayInstance = NULL;
+
+namespace {
+	SketchRetopo &_core = SketchRetopo::get_instance();
+}
 
 OpenGLDisplayWidget & OpenGLDisplayWidget::getInstance() {
 	if (glDisplayInstance == NULL)
