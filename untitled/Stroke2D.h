@@ -20,7 +20,7 @@ class Stroke2D :
 public:
 
 	//Ctor and dtor
-	Stroke2D() {}
+	Stroke2D() : _length(0.0) {}
 	Stroke2D(std::vector<Point> points) : Curve2D <Point, Curve2DEdge>(points) {
 		for (int i = 0; i < static_cast<int>(points.size()) - 1; i++) {
 			_topoGraph[i].push_back(_lines.size());
@@ -106,6 +106,7 @@ void Stroke2D<Point>::push_back(double x, double y) {
 		Point point(x, y, size());
 		_lines.push_back(Curve2DEdge(std::pair<int, int>(size() - 1, size()), back().distance(point)));
 		_points.push_back(point);
+		_length += _lines.back().length();
 	}
 }
 
