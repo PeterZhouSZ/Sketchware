@@ -24,6 +24,27 @@ boost::optional<PointNormal> SketchRetopo::intersect_convert(const embree::Hit& 
     pn_normalize(result);
     return result;
 }
+
+embree::Hit SketchRetopo::intersect_directly(const PointNormal & pn)const {
+	return intersect_directly(pn.head<3>().eval(), pn.tail<3>().eval());
+}
+
+embree::Hit SketchRetopo::intersect_directly(const Vector3d & org, const Vector3d & des) const {
+	if (!embree_intersector) return embree::Hit();
+
+	auto make_Ray = [](const Vector3d& org, const Vector3d& dir) {
+		auto org_f = org.cast<float>();
+		auto dir_f = dir.cast<float>();
+		return embree::Ray(
+			embree::Vec3f(org_f[0], org_f[1], org_f[2]),
+			embree::Vec3f(dir_f[0], dir_f[1], dir_f[2]));
+	};
+	embree::Hit hit;
+	embree_intersector->intersect(make_Ray(org, des - org), hit);
+
+	return hit;
+}
+
 embree::Hit SketchRetopo::intersect(const PointNormal& pn_in) const {
     if (!embree_intersector) return embree::Hit();
     
