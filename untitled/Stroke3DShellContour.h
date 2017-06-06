@@ -12,6 +12,7 @@ public:
 	Stroke3DShellContour(const Stroke2D<Point2D>& stroke, bool isShapeMatching = false) : Stroke3D(stroke), _isShapeMatching(isShapeMatching) { set_polyline_pn(stroke); }
 	virtual ~Stroke3DShellContour();
 
+	//Return the point and the vector from the point of the line to the point on the face
 	static PointNormal nearest_point_line_to_model(const Point2D & stroke_point);
 	static PointNormal nearest_point_line_to_model(const Line & line);
 

@@ -68,7 +68,7 @@ Polyline_PointNormal Stroke3DShellContour::polyline_pn(const Stroke2D<Point2D> &
 		for (auto it = stroke.begin(); it != stroke.end(); it++) {
 			//Find the corresponding point on the face of basemesh
 			auto point = intersect_point(merge(core.camera->get_eye(), unproject(Vector3d(it->x(), it->y(), 1.0)) - core.camera->get_eye()), min_skew);
-			auto point_on_face = core.intersect_convert(core.intersect(merge(point, s1_to_model_face)));
+			auto point_on_face = core.intersect_convert(core.intersect_directly(merge(point, s1_to_model_face)));
 
 			result_points.push_back(merge(point, point_on_face->head<3>().eval() - point));
 		}
@@ -99,7 +99,7 @@ Stroke3D::PointNormal Stroke3DShellContour::nearest_point_line_to_model(const Po
 Stroke3D::PointNormal Stroke3DShellContour::nearest_point_line_to_model(const Line & line) {
 
 	//The line interset with the model
-	auto pn = core.intersect_convert(core.intersect(line));
+	auto pn = core.intersect_convert(core.intersect_directly(line));
 	if (pn.is_initialized()) {
 		auto direction = pn->tail<3>().eval();
 		direction.normalize();

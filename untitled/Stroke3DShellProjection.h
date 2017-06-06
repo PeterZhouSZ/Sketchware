@@ -13,7 +13,7 @@ public:
 	double height(int index)const { if (index >= 0 && index < _heights.size()) return _heights[index]; qDebug() << "Index of height is unacceptable!!!"; return -1; }
 
 protected:
-	void set_heights_when_endpoints_are_known(const PointNormal & c1, const PointNormal & cn, Stroke2D<Point2D> & stroke);
+	void set_heights_when_endpoints_are_known(const PointNormal & c1, const PointNormal & cn, const Stroke2D<Point2D> & stroke);
 	void set_heights_when_endpoints_are_unknown(const Stroke2D<Point2D> & stroke);
 	double convert_height(double height) const; //convert the height to the 3D space height
 

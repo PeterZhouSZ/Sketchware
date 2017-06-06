@@ -36,7 +36,7 @@ Stroke3D::DirectionVector Stroke3DTagentPlane::get_tangent_plane_normal_when_end
 }
 
 Stroke3D::Plane Stroke3DTagentPlane::get_min_skew_plane_when_endpoints_known(const Point & a, const Point & b, const Stroke2D<Point2D> & stroke)const {
-	auto pn = core.intersect_convert(core.intersect(merge(a, b-a)));
+	auto pn = core.intersect_convert(core.intersect_directly(merge(a, b-a)));
 	if (pn.is_initialized()) { return get_min_skew_plane_when_endpoints_known(a, stroke); }
 	return min_skew_plane(a, b - a);
 }
